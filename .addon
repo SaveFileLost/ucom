@@ -1,0 +1,20 @@
+{
+  "Title": "Ucom",
+  "Type": "library",
+  "Org": "sfl",
+  "Ident": "ucom",
+  "Tags": null,
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "Resources": null,
+  "MenuResources": null,
+  "HasCode": true,
+  "CodePath": ".",
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Metadata": {
+    "ProjectTemplate": null,
+    "CsProjName": ""
+  }
+}
