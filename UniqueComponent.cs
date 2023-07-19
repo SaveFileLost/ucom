@@ -6,13 +6,13 @@ namespace Ucom;
 
 public abstract partial class UniqueComponent : EntityComponent
 {
-	static uint NextUniqueId = 1;
-	static Dictionary<uint, UniqueComponent> Components = new();
+	static int NextUniqueId = 1;
+	static Dictionary<int, UniqueComponent> Components = new();
 
-	public static T FromId<T>(uint id) where T : UniqueComponent
+	public static T FromId<T>(int id) where T : UniqueComponent
 		=> Components.ContainsKey(id) ? Components[id] as T : null;
 
-	[Net] public uint UniqueId { get; private set; }
+	[Net] public int UniqueId { get; private set; }
 
 	/// <summary>
 	/// Make sure to call this in your child class
