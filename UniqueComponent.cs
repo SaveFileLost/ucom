@@ -9,9 +9,15 @@ public abstract partial class UniqueComponent : EntityComponent
 	static int NextUniqueId = 1;
 	static Dictionary<int, UniqueComponent> Components = new();
 
+	/// <summary>
+	/// Acquires a UniqueComponent from its ID
+	/// </summary>
 	public static T FromId<T>(int id) where T : UniqueComponent
 		=> Components.ContainsKey(id) ? Components[id] as T : null;
 
+	/// <summary>
+	/// The unique ID of this component
+	/// </summary>
 	[Net] public int UniqueId { get; private set; }
 
 	/// <summary>
@@ -27,7 +33,7 @@ public abstract partial class UniqueComponent : EntityComponent
 		}
 
 		if (!Game.IsServer) return;
-		
+
 		UniqueId = NextUniqueId;
 		NextUniqueId += 1;
 		AddToDict();
